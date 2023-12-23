@@ -27,6 +27,7 @@ import co.aospa.systemui.qs.tiles.PowerShareTile
 import co.aospa.systemui.qs.tiles.SoundTile
 import co.aospa.systemui.qs.tiles.UsbTetherTile
 import co.aospa.systemui.qs.tiles.WifiTile
+import co.aospa.systemui.qs.tiles.SyncTile
 import com.android.systemui.qs.tileimpl.QSTileImpl
 import dagger.Binds
 import dagger.Module
@@ -101,5 +102,11 @@ interface ParanoidQSModule {
     @IntoMap
     @StringKey(SoundTile.TILE_SPEC)
     fun bindSoundTile(soundTile: SoundTile): QSTileImpl<*>
+
+    /** Inject SyncTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(SyncTile.TILE_SPEC)
+    fun bindSyncTile(syncTile: SyncTile): QSTileImpl<*>
 
 }
